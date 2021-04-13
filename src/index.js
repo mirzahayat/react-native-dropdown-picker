@@ -17,6 +17,7 @@ function ReactNativeDropDownPicker({
     value = null,
     items = [],
     placeholder = "Select an item",
+    placeholderStyle = {},
     containerStyle = {},
     textStyle = {},
     containerLabelStyle = {}
@@ -51,6 +52,12 @@ function ReactNativeDropDownPicker({
     }, [value]);
 
     /**
+     * Indicates whether the value is null.
+     * @returns {boolean}
+     */
+    const isNull = React.useCallback(() => value === null, [value]);
+
+    /**
      * The container style.
      * @returns {array}
      */
@@ -65,7 +72,7 @@ function ReactNativeDropDownPicker({
      */
     const _containerLabelStyle = useMemo(() => ([
         textStyle,
-        value !== null && containerLabelStyle
+        isNull() ? placeholderStyle : containerLabelStyle,
     ]), [textStyle, value]);
 
     return (
