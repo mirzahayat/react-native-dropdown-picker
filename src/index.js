@@ -59,6 +59,13 @@ function ReactNativeDropDownPicker({
     const isNull = React.useCallback(() => value === null, [value]);
 
     /**
+     * onPressPicker.
+     */
+    const onPressPicker = useCallback(() => {
+        //
+    }, []);
+
+    /**
      * The container style.
      * @returns {array}
      */
@@ -77,7 +84,7 @@ function ReactNativeDropDownPicker({
     ]), [textStyle, value]);
 
     return (
-        <TouchableOpacity style={_containerStyle}>
+        <TouchableOpacity style={_containerStyle} onPress={onPressPicker}>
             <Text style={_containerLabelStyle}>
                 {getLabel(placeholder)}
             </Text>
