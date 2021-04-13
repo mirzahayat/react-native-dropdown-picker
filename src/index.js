@@ -64,7 +64,7 @@ function ReactNativeDropDownPicker({
     const _containerStyle = useMemo(() => ([
         Styles.container,
         containerStyle
-    ]), [containerStyle, value]);
+    ]), [containerStyle]);
 
     /**
      * The style of the container label.
