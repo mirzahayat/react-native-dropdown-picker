@@ -82,7 +82,7 @@ function ReactNativeDropDownPicker({
         textStyle,
         isNull() ? placeholderStyle : containerLabelStyle,
     ]), [textStyle, value]);
-    console.log('rendering')
+
     return (
         <TouchableOpacity style={_containerStyle} onPress={onPressPicker}>
             <Text style={_containerLabelStyle}>
