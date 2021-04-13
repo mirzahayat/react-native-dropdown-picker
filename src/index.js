@@ -16,7 +16,7 @@ import Styles from './styles';
 function ReactNativeDropDownPicker({
     value = null,
     items = [],
-    placeholder = "PLACEHOLDER",
+    placeholder = "Select an item",
     containerStyle = {}
 }) {
     /**
