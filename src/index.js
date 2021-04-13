@@ -21,8 +21,6 @@ function ReactNativeDropDownPicker({
     textStyle = {},
     containerLabelStyle = {}
 }) {
-    const [selected, setSelected] = useState(value);
-
     /**
      * Get the selected item.
      * @returns {object}
@@ -50,7 +48,7 @@ function ReactNativeDropDownPicker({
      */
     const isSelected = useCallback((val) => {
         return value === val;
-    }, [selected]);
+    }, [value]);
 
     /**
      * The container style.
@@ -67,8 +65,8 @@ function ReactNativeDropDownPicker({
      */
     const _containerLabelStyle = useMemo(() => ([
         textStyle,
-        containerLabelStyle
-    ]), [textStyle]);
+        value !== null && containerLabelStyle
+    ]), [textStyle, value]);
 
     return (
         <TouchableOpacity style={_containerStyle}>
